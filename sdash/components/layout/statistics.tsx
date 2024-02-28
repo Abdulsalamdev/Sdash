@@ -1,12 +1,12 @@
 import { ArrowUp2, CardSend, CardTick, Profile2User } from "iconsax-react";
 import React from "react";
-import { Spline } from "../charts/spline";
+import { SalaryAreaChat } from "../charts/salaryAreaChat";
 
 export const Statistics = () => {
   return (
     <div className="flex flex-col gap-[20px]">
-      <div className="flex gap-[16px] items-center">
-        <div className="p-[15px] bg-white rounded-[15px] pr-[25px]">
+      <div className="flex gap-[16px] items-center justify-between flex-wrap">
+        <div className="p-[15px] bg-white rounded-[15px] pr-[25px] dark:bg-[#232A37] grow">
           <div className="flex gap-[10px] items-center pb-[10px]">
             <p>
               <Profile2User size="22" color="#2F70F2" />
@@ -25,7 +25,7 @@ export const Statistics = () => {
             </p>
           </div>
         </div>
-        <div className="p-[15px] bg-white rounded-[15px] pr-[25px]">
+        <div className="p-[15px] bg-white rounded-[15px] pr-[25px] dark:bg-[#232A37] grow">
           <div className="flex gap-[10px] items-center pb-[10px]">
             <p>
               <CardSend size="22" color="#876AFE" />
@@ -44,7 +44,7 @@ export const Statistics = () => {
             </p>
           </div>
         </div>
-        <div className="p-[15px] bg-white rounded-[15px] pr-[25px]">
+        <div className="p-[15px] bg-white rounded-[15px] pr-[25px] dark:bg-[#232A37] grow">
           <div className="flex gap-[10px] items-center pb-[10px]">
             <p>
               <CardTick size="22" color="#FFBC02" />
@@ -64,7 +64,7 @@ export const Statistics = () => {
           </div>
         </div>
       </div>
-      <Spline />
+      <SalaryAreaChat />
     </div>
   );
 };

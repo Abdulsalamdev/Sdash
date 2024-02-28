@@ -1,8 +1,10 @@
 import { ArrangeHorizontalCircle, CalendarSearch } from "iconsax-react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import React from "react";
 
 export const Overview = () => {
+  const { resolvedTheme, theme, setTheme } = useTheme();
   const data = [
     {
       name: "Sportify App",
@@ -38,9 +40,12 @@ export const Overview = () => {
   ];
   return (
     <div className="flex flex-col gap-[12px]">
-      <div className="bg-white px-[10px] py-[20px] rounded-[10px]">
-        <div className="flex gap-[10px] items-center pb-[10px] border-b-[1px] border-solid border-b-[#E3E3E3]">
-          <ArrangeHorizontalCircle size="22" color="#121212" />
+      <div className="bg-white p-[30px] rounded-[10px] dark:bg-[#252735]">
+        <div className="flex gap-[10px] items-center pb-[10px] border-b-[1px] border-solid border-b-[#E3E3E3] dark:border-b-[#252D3D]">
+          <ArrangeHorizontalCircle
+            size="22"
+            color={theme === "light" ? "#121212" : "#ffffff"}
+          />
           <span className="text-[18px] font-roboto font-medium">
             Transaction details
           </span>
@@ -54,7 +59,7 @@ export const Overview = () => {
               <div className="flex gap-[10px] items-center">
                 <Image src={item.img} alt={""} width={30} height={30} />
                 <div className="flex flex-col ">
-                  <span className="text-[16px] text-[#121212] font-roboto font-medium">
+                  <span className="text-[16px] text-[#121212] font-roboto font-medium dark:text-[#C1C2C6]">
                     {item.name}
                   </span>
                   <span className="text-[12px] text-whitesmoke">
@@ -69,9 +74,12 @@ export const Overview = () => {
           ))}
         </div>
       </div>
-      <div className="bg-white px-[10px] py-[20px] rounded-[10px]">
-        <div className="flex gap-[10px] items-center pb-[10px] border-b-[1px] border-solid border-b-[#E3E3E3]">
-          <CalendarSearch size="22" color="#121212" />
+      <div className="bg-white px-[10px] py-[20px] rounded-[10px] dark:bg-[#252735]">
+        <div className="flex gap-[10px] items-center pb-[10px] border-b-[1px] border-solid border-b-[#E3E3E3] dark:border-b-[#252D3D]">
+          <CalendarSearch
+            size="22"
+            color={theme === "light" ? "#121212" : "#ffffff"}
+          />
           <span className="text-[18px] font-roboto font-medium">
             Quick transfer
           </span>
@@ -80,7 +88,7 @@ export const Overview = () => {
           {cardS.map((card, index) => (
             <div
               key={index}
-              className="flex gap-[10px] items-center border-[1px] border-solid border-whitesmoke p-[10px] rounded-[7px]"
+              className="flex gap-[10px] items-center border-[1px] border-solid border-whitesmoke p-[10px] rounded-[7px] dark:border-[#434d63]"
             >
               <Image src={card.img} alt={""} width={30} height={30} />
               <div className="text-[13px] font-medium">{card.name}</div>

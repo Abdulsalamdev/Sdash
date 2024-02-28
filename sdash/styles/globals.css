@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.table-container {
+  margin: 20px;
+}
+
+.table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  margin-top: 20px;
+}
+
+.th {
+  padding: 10px;
+  padding-bottom: 20px;
+  color: #121212;
+  font-size: 18;
+  text-align: left;
+  border-bottom: 1px solid #121212;
+}
+
+.td {
+  padding: 10px;
+  color: #a8a8a8;
+  font-size: 16px;
+  /* border: 1px solid #ddd; */
+}
+
+/* .tr:nth-child(even) {
+  background-color: #f9f9f9;
+} */
+
+.header {
+  color: #333;
+}
+
+.bd {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.aspect-ratio-box {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+}
+.apexcharts-toolbar {
+  display: none;
+}
+
+.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center {
+  display: none;
+}
+.apexcharts-zoomin-icon {
+  display: none;
+}
+.apexcharts-zoom-icon {
+  display: none;
+}
+.apexcharts-pan-icon {
+  display: none;
+}
+
+.visible {
+  position: absolute;
+  background-color: #876afe;
+  z-index: 1;
+  top: 70px;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 1.5s linear;
+  border: 1px solid #f7f7ff;
+}
