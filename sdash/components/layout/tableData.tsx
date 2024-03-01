@@ -2,50 +2,62 @@ import { Database } from "@/public/images/database";
 import BarChart from "../charts/barChats";
 import React from "react";
 import { ArrowDown2 } from "iconsax-react";
+import { useQuery } from "@tanstack/react-query";
+import { builder } from "@/api/builder";
+import { Supplies, SupplyData } from "@/types/alltypes";
 
 export const TableData = () => {
-  const data = [
-    {
-      Actual: "office supplies",
-      actual: "12345",
-      Forecast: "12345",
-      variance1: "12345",
-      variance2: "12345",
-      variance3: "12345",
-    },
-    {
-      Actual: "office supplies",
-      actual: "12345",
-      Forecast: "12345",
-      variance1: "12345",
-      variance2: "12345",
-      variance3: "12345",
-    },
-    {
-      Actual: "office supplies",
-      actual: "12345",
-      Forecast: "12345",
-      variance1: "12345",
-      variance2: "12345",
-      variance3: "12345",
-    },
-    {
-      Actual: "office supplies",
-      actual: "12345",
-      Forecast: "12345",
-      variance1: "12345",
-      variance2: "12345",
-      variance3: "12345",
-    },
-    {
-      Actual: "office supplies",
-      actual: "12345",
-      Forecast: "12345",
-      variance1: "12345",
-      variance2: "12345",
-      variance3: "12345",
-    },
-  ];
+  //getting list of supply
+
+  const { data: supplyList } = useQuery({
+    queryFn: () => builder.use().supplies.forecast,
+    queryKey: builder.supplies.forecast.get(),
+    select: ({ data }) => data?.data,
+  });
+
+  console.log(supplyList);
+  // const data = [
+  //   {
+  //     Actual: "office supplies",
+  //     actual: "12345",
+  //     Forecast: "12345",
+  //     variance1: "12345",
+  //     variance2: "12345",
+  //     variance3: "12345",
+  //   },
+  //   {
+  //     Actual: "office supplies",
+  //     actual: "12345",
+  //     Forecast: "12345",
+  //     variance1: "12345",
+  //     variance2: "12345",
+  //     variance3: "12345",
+  //   },
+  //   {
+  //     Actual: "office supplies",
+  //     actual: "12345",
+  //     Forecast: "12345",
+  //     variance1: "12345",
+  //     variance2: "12345",
+  //     variance3: "12345",
+  //   },
+  //   {
+  //     Actual: "office supplies",
+  //     actual: "12345",
+  //     Forecast: "12345",
+  //     variance1: "12345",
+  //     variance2: "12345",
+  //     variance3: "12345",
+  //   },
+  //   {
+  //     Actual: "office supplies",
+  //     actual: "12345",
+  //     Forecast: "12345",
+  //     variance1: "12345",
+  //     variance2: "12345",
+  //     variance3: "12345",
+  //   },
+  // ];
   const data2 = [
     { id: 1, title: "View Per Quarter" },
     { id: 2, title: "View Per Year" },
@@ -127,15 +139,15 @@ export const TableData = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, index) => (
-              <tr key={index} className="tr">
-                <td className="td font-roboto">{row.Actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
-                <td className="td font-roboto">{row.actual}</td>
+            {supplyList?.map((supply: SupplyData) => (
+              <tr key={supply.name} className="tr">
+                <td className="td font-roboto">{supply?.name}</td>
+                <td className="td font-roboto">{supply?.actual_value}</td>
+                <td className="td font-roboto">{supply?.forecasted_value}</td>
+                <td className="td font-roboto">{supply?.q1_variance}</td>
+                <td className="td font-roboto">{supply?.q2_variance}</td>
+                <td className="td font-roboto">{supply?.q3_variance}</td>
+                <td className="td font-roboto">{supply?.q4_variance}</td>
               </tr>
             ))}
           </tbody>

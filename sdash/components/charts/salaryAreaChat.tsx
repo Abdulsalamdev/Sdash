@@ -1,3 +1,6 @@
+import { builder } from "@/api/builder";
+import { useQuery } from "@tanstack/react-query";
+import dayjs from "dayjs";
 import { ArrowDown2 } from "iconsax-react";
 import { useTheme } from "next-themes";
 import React, { useState } from "react";
@@ -5,14 +8,24 @@ import Chart from "react-apexcharts";
 
 export const SalaryAreaChat = () => {
   const { resolvedTheme, theme, setTheme } = useTheme();
+  const { data: salaryData } = useQuery({
+    queryFn: () => builder.use().transactions.transactionLog,
+    queryKey: builder.transactions.transactionLog.get(),
+    select: ({ data }) => data?.data,
+  });
+  console.log(salaryData);
   const [series] = useState([
     {
       name: "series1",
-      data: [31, 40, 28, 51, 42, 109, 100],
+      data: salaryData?.map((item) =>
+        item?.salary_paid?.toString().slice(0, 3)
+      ),
     },
     {
       name: "series2",
-      data: [11, 32, 45, 32, 34, 52, 41],
+      data: salaryData?.map((item) =>
+        item?.cash_bond_bought?.toString().slice(0, 3)
+      ),
     },
   ]);
   const [option] = useState({
@@ -33,15 +46,7 @@ export const SalaryAreaChat = () => {
     },
     xaxis: {
       type: "datetime" as const,
-      categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
-      ],
+      categories: salaryData?.map((item) => dayjs(item?.date).format("D MMM")),
     },
     fill: {
       type: "gradient",
@@ -77,7 +82,7 @@ export const SalaryAreaChat = () => {
   return (
     <div>
       <div className="flex justify-between gap-[20px]">
-        <div className="flex items-center gap-[20px]">
+        <div className="flex items-center gap-[20px] flex-wrap">
           <div className="flex items-center gap-[7px]">
             <span className="text-[16px] text-[#444444] font-roboto  dark:text-[#C1C2C6]">
               Salary
@@ -85,35 +90,39 @@ export const SalaryAreaChat = () => {
             <div className="w-[18px] h-[18px] bg-[#876AFE] rounded-[5px]"></div>
           </div>
           <div className="flex items-center gap-[7px]">
-            <span className="text-[16px] text-[#444444] font-roboto  dark:text-[#C1C2C6]">
+            <span className="text-[16px] text-[#444444] font-roboto  dark:text-[#C1C2C6] whitespace-nowrap">
               Cash bound
             </span>
             <div className="w-[18px] h-[18px] bg-[#FFBC02] rounded-[5px]"></div>
           </div>
         </div>
-        <div className="flex items-center gap-[10px]">
-          <span className="text-[15px] font-bold text-whitesmoke">from</span>
-          <span className="text-[16px] font-medium text-[#121212] dark:text-[#C1C2C6]">
-            20 June
-          </span>
-          <ArrowDown2
-            size="18"
-            color={theme === "light" ? "#121212" : "#ffffff"}
-          />
-          <span className="text-[15px] font-bold text-whitesmoke">to</span>
-          <span className="text-[16px] font-medium text-[#121212] dark:text-[#C1C2C6]">
-            30 June
-          </span>
-          <ArrowDown2
-            size="18"
-            color={theme === "light" ? "#121212" : "#ffffff"}
-          />
+        <div className="flex gap-[20px]">
+          <div className="flex gap-[10px] items-center justify-between">
+            <span className="text-[15px] font-bold text-whitesmoke">from</span>
+            <span className="text-[16px] font-medium text-[#121212] dark:text-[#C1C2C6]">
+              20 June
+            </span>
+            <ArrowDown2
+              size="18"
+              color={theme === "light" ? "#121212" : "#ffffff"}
+            />
+          </div>
+          <div className="flex gap-[10px] items-center justify-between">
+            <span className="text-[15px] font-bold text-whitesmoke">to</span>
+            <span className="text-[16px] font-medium text-[#121212] dark:text-[#C1C2C6]">
+              30 June
+            </span>
+            <ArrowDown2
+              size="18"
+              color={theme === "light" ? "#121212" : "#ffffff"}
+            />
+          </div>
         </div>
       </div>
-      <div className="aspect-ratio-box pt-[10px]">
+      <div className="apexchartshm5civ0m pt-[10px]">
         <Chart
           options={option}
-          series={series}
+          series={series as any}
           type="area"
           width="100%"
           height="100%"

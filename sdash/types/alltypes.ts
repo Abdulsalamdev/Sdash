@@ -25,10 +25,10 @@ export interface Latesttransaction {
   next_page_url: null;
   prev_page_url: null;
   count: number;
-  data: Date[];
+  data: TransactionData[];
 }
 
-export interface Date {
+export interface TransactionData {
   created_at: string;
   charged_by: ChargedBy;
   charge: Charge;

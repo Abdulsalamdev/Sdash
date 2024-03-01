@@ -39,9 +39,14 @@
 .bd {
   border-bottom: 1px solid #e3e3e3;
 }
-
+.apexchartshm5civ0m {
+  width: clamp(300px, 38vw, 600px);
+  height: clamp(130px, 17vw, 260px);
+}
 .aspect-ratio-box {
-  width: 100%;
+  /* width: 100%; */
+  /* width: clamp(300px, 38vw, 600px);
+  height: clamp(130px, 17vw, 260px); */
   aspect-ratio: 16 / 8;
 }
 .apexcharts-toolbar {

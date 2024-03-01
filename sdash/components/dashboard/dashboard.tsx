@@ -8,11 +8,11 @@ export const Dashboard = () => {
       <SideBar />
       <div className="bg-[#f5f5f5] px-[20px] py-[15px] grow h-[100vh] overflow-y-scroll dark:bg-[#161C27]">
         <NavBar />
-        <div className="flex gap-[20px] pt-[30px]  flex-wrap">
-          <div className="grow">
+        <div className="flex gap-[20px] pt-[30px] flex-wrap lg:flex-no-wrap">
+          <div className="">
             <Statistics />
           </div>
-          <div className="grow">
+          <div className="">
             <Overview />
           </div>
         </div>
