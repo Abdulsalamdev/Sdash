@@ -22,6 +22,12 @@ const config: Config = {
       fontFamily: {
         roboto: "roboto",
       },
+      screens: {
+        sm: "425px",
+        md: "725px",
+        lg: "980px",
+        xl: "1300px",
+      },
     },
   },
   plugins: [],

@@ -116,42 +116,48 @@ export const TableData = () => {
           ))}
         </div>
       </div>
-      <div className="grow bg-white p-[30px] rounded-[15px] dark:bg-[#161C27]">
-        <div className="flex justify-between gap-[20px] bd pb-[10px] dark:border-b-[#252D3D]">
-          <div className="flex gap-[5px] items-center ">
-            <Database />
-            <p className="text-[22px] text-[#121212] font-medium font-roboto dark:text-white">
-              Total Point
+
+      <div className="overTable dark:bg-[#161C27] bg-white ">
+        <div className="grow bg-white p-[30px] rounded-[15px] dark:bg-[#161C27]">
+          <div className="flex justify-between gap-[20px] bd pb-[10px] dark:border-b-[#252D3D]">
+            <div className="flex gap-[5px] items-center ">
+              <Database />
+              <p className="text-[22px] text-[#121212] font-medium font-roboto dark:text-white whitespace-nowrap">
+                Total Point
+              </p>
+            </div>
+            <p className="text-[#876AFE] text-[16px] whitespace-nowrap">
+              View All
             </p>
           </div>
-          <p className="text-[#876AFE] text-[16px]">View All</p>
-        </div>
-        <table className="table dark:bg-[#161C27]">
-          <thead>
-            <tr className="dark:bg-[#232A37]">
-              <th className="th font-roboto">Actual</th>
-              <th className="th font-roboto">actual</th>
-              <th className="th font-roboto">Forecast</th>
-              <th className="th font-roboto">Variance</th>
-              <th className="th font-roboto">Variance</th>
-              <th className="th font-roboto">Variance</th>
-              <th className="th font-roboto">Variance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {supplyList?.map((supply: SupplyData) => (
-              <tr key={supply.name} className="tr">
-                <td className="td font-roboto">{supply?.name}</td>
-                <td className="td font-roboto">{supply?.actual_value}</td>
-                <td className="td font-roboto">{supply?.forecasted_value}</td>
-                <td className="td font-roboto">{supply?.q1_variance}</td>
-                <td className="td font-roboto">{supply?.q2_variance}</td>
-                <td className="td font-roboto">{supply?.q3_variance}</td>
-                <td className="td font-roboto">{supply?.q4_variance}</td>
+
+          <table className="table dark:bg-[#161C27]">
+            <thead>
+              <tr className="dark:bg-[#232A37]">
+                <th className="th font-roboto">Actual</th>
+                <th className="th font-roboto">actual</th>
+                <th className="th font-roboto">Forecast</th>
+                <th className="th font-roboto">Variance</th>
+                <th className="th font-roboto">Variance</th>
+                <th className="th font-roboto">Variance</th>
+                <th className="th font-roboto">Variance</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {supplyList?.map((supply: SupplyData) => (
+                <tr key={supply.name} className="tr">
+                  <td className="td font-roboto">{supply?.name}</td>
+                  <td className="td font-roboto">{supply?.actual_value}</td>
+                  <td className="td font-roboto">{supply?.forecasted_value}</td>
+                  <td className="td font-roboto">{supply?.q1_variance}</td>
+                  <td className="td font-roboto">{supply?.q2_variance}</td>
+                  <td className="td font-roboto">{supply?.q3_variance}</td>
+                  <td className="td font-roboto">{supply?.q4_variance}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

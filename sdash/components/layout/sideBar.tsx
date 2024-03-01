@@ -256,7 +256,7 @@ export const SideBar = () => {
                   display: "flex",
                   flexDirection: "column",
                 }}
-                className="flex flex-col gap-[15px] pt-[10px]"
+                className="flex flex-col gap-[20px] pt-[10px]"
               >
                 {item.info.map((content, index) => (
                   <div key={index} className="flex items-center gap-[7px]">

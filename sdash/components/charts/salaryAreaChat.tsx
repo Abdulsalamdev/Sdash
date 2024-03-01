@@ -119,7 +119,7 @@ export const SalaryAreaChat = () => {
           </div>
         </div>
       </div>
-      <div className="apexchartshm5civ0m pt-[10px]">
+      <div className="aspect-ratio-box pt-[10px]">
         <Chart
           options={option}
           series={series as any}

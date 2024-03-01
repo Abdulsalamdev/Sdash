@@ -8,7 +8,7 @@
 
 .table {
   width: 100%;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
@@ -38,10 +38,6 @@
 
 .bd {
   border-bottom: 1px solid #e3e3e3;
-}
-.apexchartshm5civ0m {
-  width: clamp(300px, 38vw, 600px);
-  height: clamp(130px, 17vw, 260px);
 }
 .aspect-ratio-box {
   /* width: 100%; */
@@ -76,6 +72,11 @@
   padding: 15px;
   transition: all 1.5s linear;
   border: 1px solid #f7f7ff;
+}
+.overTable {
+  width: 100%;
+  padding: 10px;
+  overflow-x: auto;
 }
 @media (max-width: 540px) {
   .icon:nth-child(odd) {
