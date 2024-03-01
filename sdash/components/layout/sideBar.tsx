@@ -240,52 +240,12 @@ export const SideBar = () => {
   return (
     <div>
       <div
-        className="flex md:hidden relative pt-[30px] px-[10px]"
-        onClick={() => setVisible(!visible)}
-      >
-        <HambergerMenu size="22" color="#2D6DED" />
-        {visible ? (
-          <div className="visible">
-            {data.map((item) => (
-              <div key={item.name} className="">
-                <p className="border-solid text-[20px] font-roboto text-my-black pb-[10px] border-b-[1px] border-b-[#e0d1d1] font-medium dark:text-white dark:border-b-[#252D3D]">
-                  {item.name}
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                  className="flex flex-col gap-[15px] pt-[10px]"
-                >
-                  {item.info.map((content, index) => (
-                    <div key={index} className="flex items-center gap-[7px]">
-                      <button>{content.icon}</button>
-                      <Link
-                        className={`text-[16px] font-medium font-roboto whitespace-nowrap ${
-                          pathname === content.link
-                            ? "text-[white]"
-                            : "text-[#121212] dark:text-[white]"
-                        }`}
-                        href={content.link}
-                      >
-                        {content.name}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </div>
-      <div
         className={`hidden px-[20px] pt-[15px] md:flex flex-col justify-centers bg-[white] h-[100vh] relative overflow-y-hidden dark:bg-[#1A212E] `}
       >
         <p className="text-blue text-[clamp(25px,2.2vw,35px)] font-roboto font-bold">
           SDash
         </p>
-        <div className="flex flex-col px-[10px] gap-[15px]">
+        <div className="flex flex-col pr-[10px] gap-[clamp(15px,1.5vw,25px)]">
           {data.map((item) => (
             <div key={item.name} className="">
               <p className="border-solid text-[20px] font-roboto text-my-black pb-[10px] border-b-[1px] border-b-[#e0d1d1] font-medium dark:text-white dark:border-b-[#252D3D]">

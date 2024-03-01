@@ -1,11 +1,245 @@
 import { TextInput } from "@mantine/core";
 import { Message, SearchNormal1, Setting2, Notification } from "iconsax-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { MenuData } from "../common/menuData";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import {
+  ArrowCircleLeft,
+  ArrowCircleRight,
+  Element3,
+  HambergerMenu,
+  Lock1,
+  Profile,
+  Sms,
+} from "iconsax-react";
 export const NavBar = () => {
   const { resolvedTheme, theme, setTheme } = useTheme();
+  const { pathname } = useRouter();
+  const [visible, setVisible] = useState(false);
+  const data = [
+    {
+      name: "Dashboard",
+      info: [
+        {
+          name: "Home",
+          icon: (
+            <Element3
+              size="18"
+              color={
+                pathname.includes("/")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#3045BC"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Home",
+          link: "/",
+        },
+        {
+          name: "Files",
+          icon: (
+            <Profile
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Files",
+          link: "#",
+        },
+        {
+          name: "Deadline Project",
+          icon: (
+            <Sms
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Deadline Project",
+          link: "#",
+        },
+        {
+          name: "Management",
+          icon: (
+            <Lock1
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Management",
+          link: "#",
+        },
+        {
+          name: "database",
+          icon: (
+            <Lock1
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Database",
+          link: "#",
+        },
+      ],
+    },
+    {
+      name: "Custome Data",
+      info: [
+        {
+          name: "Team Award",
+          icon: (
+            <Element3
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Team Award",
+          link: "#",
+        },
+        {
+          name: "Invoice Data",
+          icon: (
+            <Profile
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Invoice Data",
+          link: "#",
+        },
+        {
+          name: "Settings",
+          icon: (
+            <Sms
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Settings",
+          link: "#",
+        },
+        {
+          name: "Announcement",
+          icon: (
+            <Lock1
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Announcement",
+          link: "#",
+        },
+        {
+          name: "Meadia Assets",
+          icon: (
+            <Lock1
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tooltip: "Meadia Assets",
+          link: "#",
+        },
+        {
+          name: "Client Feedback",
+          icon: (
+            <Lock1
+              size="18"
+              color={
+                pathname.includes("/home")
+                  ? theme === "light"
+                    ? "#3045BC"
+                    : "#ffffff"
+                  : theme === "dark"
+                  ? "#ffffff"
+                  : "black"
+              }
+            />
+          ),
+          tootip: "Client Feedback",
+          link: "#",
+        },
+      ],
+    },
+  ];
   const icons = [
     <Message size="22" color={theme === "light" ? "#121212" : "#ffffff"} />,
     <MenuData />,
@@ -26,7 +260,7 @@ export const NavBar = () => {
           styles={{
             input: {
               outline: "none",
-              width: "clamp(190px,17vw,270px)",
+              width: "clamp(150px,17vw,270px)",
               border: "none",
               background: theme === "light" ? "white" : "#232A37",
               color: theme === "light" ? "black" : "white",
@@ -35,23 +269,67 @@ export const NavBar = () => {
         />
       </div>
       <div className="flex gap-[10px] items-center flex-wrap">
-        <div className="flex gap-[20px] items-center">
+        <div className="flex gap-[clamp(10px,1.3vw,20px)] items-center">
           {icons.map((icon, index) => (
-            <div key={index}>{icon}</div>
+            <div key={index} className="icon">
+              {icon}
+            </div>
           ))}
         </div>
-        <div className="flex items-center gap-[17px] flex-wrap">
+        <div className="flex items-center gap-[10px] flex-wrap">
           <Image
             src={"/images/boss.jpg"}
             alt={""}
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             style={{
               borderRadius: "100%",
             }}
           />
           <p className="text-[15px] font-roboto font-medium ">Alex Smit</p>
         </div>
+      </div>
+      <div
+        className="flex md:hidden relative pt-[30px] px-[10px] items-center top-[-15px]"
+        onClick={() => setVisible(!visible)}
+      >
+        <div>
+          <HambergerMenu size="32" color="#2D6DED" />
+        </div>
+        {visible ? (
+          <div className="visible flex flex-col gap-[15px]">
+            {data.map((item) => (
+              <div key={item.name} className="">
+                <p className="border-solid text-[20px] font-roboto text-my-black pb-[10px] border-b-[1px] border-b-[#e0d1d1] font-medium dark:text-white dark:border-b-[#252D3D]">
+                  {item.name}
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                  className="flex flex-col gap-[20px] pt-[10px]"
+                >
+                  {item.info.map((content, index) => (
+                    <div key={index} className="flex items-center gap-[7px]">
+                      <button>{content.icon}</button>
+                      <Link
+                        className={`text-[16px] font-medium font-roboto whitespace-nowrap ${
+                          pathname === content.link
+                            ? "text-[#3045BC]"
+                            : "text-[#121212] dark:text-[white]"
+                        }`}
+                        href={content.link}
+                      >
+                        {content.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
