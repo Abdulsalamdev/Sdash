@@ -241,12 +241,25 @@ export const NavBar = () => {
     },
   ];
   const icons = [
-    <Message size="22" color={theme === "light" ? "#121212" : "#ffffff"} />,
-    <MenuData />,
-    <Notification
-      size="22"
-      color={theme === "light" ? "#121212" : "#ffffff"}
-    />,
+    {
+      id: 1,
+      name: (
+        <Message size="22" color={theme === "light" ? "#121212" : "#ffffff"} />
+      ),
+    },
+    {
+      id: 2,
+      name: <MenuData />,
+    },
+    {
+      id: 3,
+      name: (
+        <Notification
+          size="22"
+          color={theme === "light" ? "#121212" : "#ffffff"}
+        />
+      ),
+    },
   ];
   return (
     <div className="flex justify-between items-center gap-[clamp(10px,1.3vw,20px)]">
@@ -271,8 +284,8 @@ export const NavBar = () => {
       <div className="flex gap-[10px] items-center flex-wrap">
         <div className="flex gap-[clamp(10px,1.3vw,20px)] items-center">
           {icons.map((icon, index) => (
-            <div key={index} className="icon">
-              {icon}
+            <div key={icon.id}>
+              <div className="icon">{icon.name}</div>
             </div>
           ))}
         </div>
@@ -300,8 +313,8 @@ export const NavBar = () => {
         </div>
         {visible ? (
           <div className="visible flex flex-col gap-[15px]">
-            {data.map((item) => (
-              <div key={item.name} className="">
+            {data.map((item, index) => (
+              <div key={index} className="">
                 <p className="border-solid text-[20px] font-roboto text-my-black pb-[10px] border-b-[1px] border-b-[#e0d1d1] font-medium dark:text-white dark:border-b-[#252D3D]">
                   {item.name}
                 </p>

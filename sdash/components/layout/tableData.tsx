@@ -107,10 +107,8 @@ export const TableData = () => {
         </div>
         <div>
           {data2.map((item) => (
-            <div className="flex justify-between items-center">
-              <p className="text-[#A8A8A8] pb-2" key={item.id}>
-                {item.title}
-              </p>
+            <div className="flex justify-between items-center" key={item.id}>
+              <p className="text-[#A8A8A8] pb-2">{item.title}</p>
               <ArrowDown2 size={14} className="cursor-pointer" />
             </div>
           ))}

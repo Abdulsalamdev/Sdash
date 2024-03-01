@@ -30,9 +30,12 @@ export const Statistics = () => {
     <div className="flex flex-col gap-[20px]">
       <div className="flex gap-[16px] items-center justify-between xl:flex-nowrap flex-wrap">
         {overView?.map((data: Views, index) => (
-          <div className="p-[15px] bg-white rounded-[15px] pr-[25px] dark:bg-[#232A37] grow">
+          <div
+            className="p-[15px] bg-white rounded-[15px] pr-[25px] dark:bg-[#232A37] grow"
+            key={index}
+          >
             <div className="flex gap-[10px] items-center pb-[10px]">
-              <p key={index}>{icons[data.name]}</p>
+              <p>{icons[data.name]}</p>
               <p
                 className="text-[#2F70F2] font-roboto font-medium"
                 style={{
