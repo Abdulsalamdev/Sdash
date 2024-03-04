@@ -244,7 +244,11 @@ export const NavBar = () => {
     {
       id: 1,
       name: (
-        <Message size="22" color={theme === "light" ? "#121212" : "#ffffff"} />
+        <Message
+          size="22"
+          // color={theme === "light" ? "#121212" : "#ffffff"}
+          color="#121212"
+        />
       ),
     },
     {
@@ -256,7 +260,8 @@ export const NavBar = () => {
       name: (
         <Notification
           size="22"
-          color={theme === "light" ? "#121212" : "#ffffff"}
+          // color={theme === "light" ? "#121212" : "#ffffff"}
+          color="#121212"
         />
       ),
     },
@@ -266,7 +271,8 @@ export const NavBar = () => {
       <div className="flex bg-[white] gap-[10px] items-center p-[10px] rounded-[15px] dark:bg-[#1A212E]">
         <SearchNormal1
           size="24"
-          color={resolvedTheme === "light" ? "#121212" : "#ffffff"}
+          // color={theme === "light" ? "#121212" : "#ffffff"}
+          color="#121212"
         />
         <TextInput
           placeholder="Search properly.."
@@ -275,8 +281,9 @@ export const NavBar = () => {
               outline: "none",
               width: "clamp(150px,17vw,270px)",
               border: "none",
-              background: resolvedTheme === "light" ? "white" : "#232A37",
-              color: resolvedTheme === "light" ? "black" : "white",
+              // background: theme === "light" ? "white" : "#232A37",
+              backgroundColor: "",
+              color: theme === "light" ? "black" : "white",
             },
           }}
         />
