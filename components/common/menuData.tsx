@@ -25,7 +25,7 @@ export const MenuData = () => {
         <button className="flex items-center justify-center">
           <Setting2
             size="22"
-            color={theme === "light" ? "#121212" : "#ffffff"}
+            // color={theme === "light" ? "#121212" : "#ffffff"}
           />
         </button>
       </Menu.Target>

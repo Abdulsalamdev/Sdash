@@ -246,7 +246,7 @@ export const NavBar = () => {
       name: (
         <Message
           size="22"
-          color={theme === "light" ? "#121212" : "#ffffff"}
+          // color={theme === "light" ? "#121212" : "#ffffff"}
           // color="#121212"
         />
       ),
@@ -260,7 +260,7 @@ export const NavBar = () => {
       name: (
         <Notification
           size="22"
-          color={theme === "light" ? "#121212" : "#ffffff"}
+          // color={theme === "light" ? "#121212" : "#ffffff"}
           // color="#121212"
         />
       ),
@@ -271,7 +271,7 @@ export const NavBar = () => {
       <div className="flex bg-[white] gap-[10px] items-center p-[10px] rounded-[15px] dark:bg-[#1A212E]">
         <SearchNormal1
           size="24"
-          color={theme === "light" ? "#121212" : "#ffffff"}
+          // color={theme === "light" ? "#121212" : "#ffffff"}
           // color="#121212"
         />
         <TextInput
@@ -291,7 +291,9 @@ export const NavBar = () => {
         <div className="flex gap-[clamp(10px,1.3vw,20px)] items-center">
           {icons.map((icon, index) => (
             <div key={icon.id}>
-              <div className="icon">{icon.name}</div>
+              <div className="icon text-[#121212] dark:text-white">
+                {icon.name}
+              </div>
             </div>
           ))}
         </div>

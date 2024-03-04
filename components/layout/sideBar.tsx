@@ -24,15 +24,15 @@ export const SideBar = () => {
           icon: (
             <Element3
               size="18"
-              color={
-                pathname.includes("/")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#3045BC"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#3045BC"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Home",
@@ -43,15 +43,15 @@ export const SideBar = () => {
           icon: (
             <Profile
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Files",
@@ -62,15 +62,15 @@ export const SideBar = () => {
           icon: (
             <Sms
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Deadline Project",
@@ -81,15 +81,15 @@ export const SideBar = () => {
           icon: (
             <Lock1
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Management",
@@ -100,15 +100,15 @@ export const SideBar = () => {
           icon: (
             <Lock1
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Database",
@@ -124,15 +124,15 @@ export const SideBar = () => {
           icon: (
             <Element3
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Team Award",
@@ -143,15 +143,15 @@ export const SideBar = () => {
           icon: (
             <Profile
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Invoice Data",
@@ -162,15 +162,15 @@ export const SideBar = () => {
           icon: (
             <Sms
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Settings",
@@ -181,15 +181,15 @@ export const SideBar = () => {
           icon: (
             <Lock1
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Announcement",
@@ -200,15 +200,15 @@ export const SideBar = () => {
           icon: (
             <Lock1
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tooltip: "Meadia Assets",
@@ -219,15 +219,15 @@ export const SideBar = () => {
           icon: (
             <Lock1
               size="18"
-              color={
-                pathname.includes("/home")
-                  ? theme === "light"
-                    ? "#3045BC"
-                    : "#ffffff"
-                  : theme === "dark"
-                  ? "#ffffff"
-                  : "black"
-              }
+              // color={
+              //   pathname.includes("/home")
+              //     ? theme === "light"
+              //       ? "#3045BC"
+              //       : "#ffffff"
+              //     : theme === "dark"
+              //     ? "#ffffff"
+              //     : "black"
+              // }
             />
           ),
           tootip: "Client Feedback",
@@ -259,19 +259,18 @@ export const SideBar = () => {
                 className="flex flex-col gap-[20px] pt-[10px]"
               >
                 {item.info.map((content, index) => (
-                  <div key={index} className="flex items-center gap-[7px]">
-                    <button>{content.icon}</button>
-                    <Link
-                      className={`text-[16px] font-medium font-roboto whitespace-nowrap ${
-                        pathname === content.link
-                          ? "text-[#2F70F2]"
-                          : "text-[#121212] dark:text-[white]"
-                      }`}
-                      href={content.link}
-                    >
-                      {content.name}
-                    </Link>
-                  </div>
+                  <Link
+                    key={index}
+                    className={`text-[16px] font-medium font-roboto whitespace-nowrap items-center ${
+                      pathname === content.link
+                        ? "text-[#2F70F2]"
+                        : "text-[#121212] dark:text-[white]"
+                    } flex gap-[10px]`}
+                    href={content.link}
+                  >
+                    {content.icon}
+                    {content.name}
+                  </Link>
                 ))}
               </div>
             </div>
