@@ -25,7 +25,11 @@ export const Statistics = () => {
     transactions: <CardSend size="22" color="#876AFE" />,
     cards_issued: <CardTick size="22" color="#FFBC02" />,
   };
-
+  const symbols: Record<string, any> = {
+    active_users: "M",
+    transactions: "$",
+    cards_issued: "",
+  };
   const Color = ["#2F70F2", "#876AFE ", "#FFBC02"];
   return (
     <div className="flex flex-col gap-[20px]">
@@ -47,9 +51,17 @@ export const Statistics = () => {
               </p>
             </div>
             <div className="flex gap-[15px] items-center">
-              <p className="text-[28px] font-roboto font-bold">
-                ${amountFormatter(data?.current)}
-              </p>
+              {index === 1 ? (
+                <p className="text-[28px] font-roboto font-bold">
+                  {symbols[data.name]}
+                  {amountFormatter(data?.current)}
+                </p>
+              ) : (
+                <p className="text-[28px] font-roboto font-bold">
+                  {amountFormatter(data?.current)}
+                  {symbols[data.name]}
+                </p>
+              )}
               <p className="flex items-center gap-[px]">
                 <ArrowDown2
                   size="22"
