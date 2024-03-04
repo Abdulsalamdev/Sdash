@@ -266,7 +266,7 @@ export const NavBar = () => {
       <div className="flex bg-[white] gap-[10px] items-center p-[10px] rounded-[15px] dark:bg-[#1A212E]">
         <SearchNormal1
           size="24"
-          color={theme === "light" ? "#121212" : "#ffffff"}
+          color={resolvedTheme === "light" ? "#121212" : "#ffffff"}
         />
         <TextInput
           placeholder="Search properly.."
@@ -275,8 +275,8 @@ export const NavBar = () => {
               outline: "none",
               width: "clamp(150px,17vw,270px)",
               border: "none",
-              background: theme === "light" ? "white" : "#232A37",
-              color: theme === "light" ? "black" : "white",
+              background: resolvedTheme === "light" ? "white" : "#232A37",
+              color: resolvedTheme === "light" ? "black" : "white",
             },
           }}
         />
