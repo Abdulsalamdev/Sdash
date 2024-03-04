@@ -25,6 +25,7 @@ export const Statistics = () => {
     transactions: <CardSend size="22" color="#876AFE" />,
     cards_issued: <CardTick size="22" color="#FFBC02" />,
   };
+
   const Color = ["#2F70F2", "#876AFE ", "#FFBC02"];
   return (
     <div className="flex flex-col gap-[20px]">

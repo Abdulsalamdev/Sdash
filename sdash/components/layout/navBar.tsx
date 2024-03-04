@@ -312,7 +312,7 @@ export const NavBar = () => {
           <HambergerMenu size="32" color="#2D6DED" />
         </div>
         {visible ? (
-          <div className="visible flex flex-col gap-[15px]">
+          <div className="visible flex flex-col gap-[15px] dark:bg-[#232A37] dark:border-[#161C27]">
             {data.map((item, index) => (
               <div key={index} className="">
                 <p className="border-solid text-[20px] font-roboto text-my-black pb-[10px] border-b-[1px] border-b-[#e0d1d1] font-medium dark:text-white dark:border-b-[#252D3D]">

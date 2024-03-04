@@ -4,80 +4,24 @@ import dayjs from "dayjs";
 import { ArrowDown2 } from "iconsax-react";
 import { useTheme } from "next-themes";
 import React, { useState } from "react";
-import Chart from "react-apexcharts";
+import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { formatNumberInMillions } from "../utils/formatInMillions";
 
 export const SalaryAreaChat = () => {
   const { resolvedTheme, theme, setTheme } = useTheme();
   const { data: salaryData } = useQuery({
     queryFn: () => builder.use().transactions.transactionLog,
     queryKey: builder.transactions.transactionLog.get(),
-    select: ({ data }) => data?.data,
+    select: ({ data }) =>
+      data?.data?.map((list) => ({
+        name: dayjs(list?.date).format("DD MMM"),
+        uv: formatNumberInMillions(list?.cash_bond_bought),
+        pv: formatNumberInMillions(list?.salary_paid),
+        amt: formatNumberInMillions(list?.salary_paid),
+      })),
   });
+
   console.log(salaryData);
-  const [series] = useState([
-    {
-      name: "series1",
-      data: salaryData?.map((item) =>
-        item?.salary_paid?.toString().slice(0, 3)
-      ),
-    },
-    {
-      name: "series2",
-      data: salaryData?.map((item) =>
-        item?.cash_bond_bought?.toString().slice(0, 3)
-      ),
-    },
-  ]);
-  const [option] = useState({
-    chart: {
-      height: 350,
-      type: "area" as const,
-      toolbar: {
-        show: false,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth" as const,
-      colors: ["#876AFE", "#FFBC02"],
-      width: 2,
-    },
-    xaxis: {
-      type: "datetime" as const,
-      categories: salaryData?.map((item) => dayjs(item?.date).format("D MMM")),
-    },
-    fill: {
-      type: "gradient",
-      gradient: {
-        shade: "dark",
-        gradientToColors: ["#eceaf5", "transparent"],
-        shadeIntensity: 0,
-        type: "horizontal",
-        stops: [0, 100, 100, 100],
-      },
-    },
-    tooltip: {
-      theme: "transparent",
-      x: {
-        format: "dd/MM/yy HH:mm",
-      },
-    },
-    responsive: [
-      {
-        breakpoint: 1440,
-        options: {
-          legend: {
-            show: false,
-            position: "bottom",
-            offsetX: -10,
-            offsetY: 0,
-          },
-        },
-      },
-    ],
-  });
 
   return (
     <div>
@@ -96,7 +40,7 @@ export const SalaryAreaChat = () => {
             <div className="w-[18px] h-[18px] bg-[#FFBC02] rounded-[5px]"></div>
           </div>
         </div>
-        <div className="flex gap-[20px]">
+        <div className="flex gap-[20px] flex-wrap">
           <div className="flex gap-[10px] items-center justify-between">
             <span className="text-[15px] font-bold text-whitesmoke">from</span>
             <span className="text-[16px] font-medium text-[#121212] dark:text-[#C1C2C6]">
@@ -119,14 +63,45 @@ export const SalaryAreaChat = () => {
           </div>
         </div>
       </div>
-      <div className="aspect-ratio-box pt-[10px]">
-        <Chart
-          options={option}
-          series={series as any}
-          type="area"
-          width="100%"
-          height="100%"
-        />
+      <div>
+        <ResponsiveContainer width="100%" height={290}>
+          <AreaChart
+            data={salaryData}
+            margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          >
+            <defs>
+              <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  // offset="0.998978"
+                  stop-color="#AF9CED"
+                  stop-opacity="0.19"
+                />
+                <stop
+                  offset="0.998978"
+                  stop-color="#AF9CED"
+                  stop-opacity="0.01"
+                />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="name" color="white" />
+            <YAxis dataKey="pv" />
+
+            <Area
+              type="monotone"
+              dataKey="uv"
+              stroke="#FFBC02"
+              fillOpacity={1}
+              fill="url(#colorUv)"
+            />
+            <Area
+              type="monotone"
+              dataKey="pv"
+              stroke="#876AFE"
+              fillOpacity={1}
+              fill="url(#colorPv)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
