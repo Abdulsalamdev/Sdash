@@ -7,7 +7,7 @@ import { MantineProvider } from "@mantine/core";
 const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider defaultTheme="system" attribute="class">
+    <ThemeProvider defaultTheme="system" attribute="class" enableColorScheme>
       <QueryClientProvider client={queryClient}>
         <MantineProvider>
           <Component {...pageProps} />
