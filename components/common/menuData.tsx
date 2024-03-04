@@ -32,10 +32,7 @@ export const MenuData = () => {
 
       <Menu.Dropdown>
         <Menu.Item>
-          <div className="flex gap-[10px] items-center">
-            <p className="text-[18px] font-medium font-roboto dark:text-[#C1C2C6]">
-              Toggle theme
-            </p>
+          <div className="flex gap-[10px] items-center dark:bg-[#232A37]">
             <Themes />
           </div>
         </Menu.Item>
