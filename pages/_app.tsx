@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
-      defaultTheme="system"
+      defaultTheme="light"
       attribute="class"
       enableColorScheme
       enableSystem={false}

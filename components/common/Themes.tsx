@@ -4,7 +4,7 @@ import { Moon, Sun1 } from "iconsax-react";
 import Image from "next/image";
 
 export const Themes = () => {
-  const { resolvedTheme, theme, setTheme } = useTheme();
+  const { systemTheme, resolvedTheme, theme, setTheme } = useTheme();
   // const { theme, setTheme } = useTheme();
   // const [mounted, setMounted] = useState(false);
   // useEffect(() => {
@@ -17,6 +17,11 @@ export const Themes = () => {
   // const toggleTheme = () => {
   //   setTheme(theme === "light" ? "dark" : "light");
   // };
+
+  // useEffect(() => {
+  //   setTheme(systemTheme === "light" ? "light" : "dark");
+  // }, []);
+
   return (
     <div
       className="rounded-[8px] p-[5px] bg-[#F5F5F6] border-[1px] border-solid  border-[#DADADD] dark:bg-[#252D3D] dark:border-none"
