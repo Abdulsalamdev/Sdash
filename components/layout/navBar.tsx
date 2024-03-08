@@ -281,7 +281,7 @@ export const NavBar = () => {
               outline: "none",
               width: "clamp(150px,17vw,270px)",
               border: "none",
-              background: theme === "light" ? "white" : "#232A37",
+              backgroundColor: theme === "light" ? "white" : "#232A37",
               color: theme === "light" ? "black" : "white",
             },
           }}
