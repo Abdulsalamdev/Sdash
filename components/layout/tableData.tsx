@@ -63,8 +63,8 @@ export const TableData = () => {
     { id: 2, title: "View Per Year" },
   ];
   return (
-    <div className="flex gap-[20px] pt-[20px] xl:flex-nowrap flex-wrap-reverse4 ">
-      <div className="bg-white p-[30px] rounded-[15px] dark:bg-[#161C27]">
+    <div className="flex gap-[20px] pt-[20px] xl:flex-nowrap flex-wrap-reverse ">
+      <div className="bg-white p-[clamp(15px,1.9vw,30px)] rounded-[15px] dark:bg-[#161C27] min-w-[250px]">
         <div className="flex gap-[7px] items-center  bd dark:border-b-[#252D3D] pb-[10px]">
           <Database />
           <p className="text-[22px] text-[#121212] font-medium font-roboto dark:text-white">

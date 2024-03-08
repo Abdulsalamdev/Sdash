@@ -267,7 +267,7 @@ export const NavBar = () => {
     },
   ];
   return (
-    <div className="flex justify-between items-center gap-[clamp(10px,1.3vw,20px)]">
+    <div className="flex justify-between items-center gap-[clamp(1px,1.3vw,20px)]">
       <div className="flex bg-[white] gap-[10px] items-center p-[10px] rounded-[15px] dark:bg-[#1A212E]">
         <SearchNormal1
           size="24"
@@ -297,7 +297,7 @@ export const NavBar = () => {
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-[10px] flex-wrap">
+        <div className=" items-center gap-[10px] flex-wrap hidden sm:flex">
           <Image
             src={"/images/boss.jpg"}
             alt={""}
@@ -313,7 +313,7 @@ export const NavBar = () => {
         </div>
       </div>
       <div
-        className="flex md:hidden relative pt-[30px] px-[10px] items-center top-[-15px]"
+        className="flex md:hidden relative pt-[30px] px-[10px] items-center top-[-15px] right-[20px]"
         onClick={() => setVisible(!visible)}
       >
         <div>
